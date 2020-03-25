@@ -6,6 +6,7 @@ import imagesLoaded from "imagesloaded";
 
 window.onload = () => {
   const galleryEl = document.querySelector(".gallery");
+  const footerEl = document.querySelector(".footer");
 
   const imagesHTMLStr = images
     .map(imgSrc => {
@@ -15,12 +16,17 @@ window.onload = () => {
 
   galleryEl.insertAdjacentHTML("beforeend", imagesHTMLStr);
 
+  const msnry = new Masonry(galleryEl, {
+    itemSelector: ".photo",
+    columnWidth: ".photo",
+    gutter: 16,
+    fitWidth: true
+  });
+
   imagesLoaded(galleryEl, () => {
-    new Masonry(galleryEl, {
-      itemSelector: ".photo",
-      columnWidth: ".photo",
-      gutter: 16,
-      fitWidth: true
-    });
+    galleryEl.classList.remove("hidden");
+    footerEl.classList.remove("hidden");
+
+    msnry.layout();
   });
 };
