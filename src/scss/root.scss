@@ -1,0 +1,14 @@
+@use "helper";
+@use "header";
+@use "main";
+@use "gallery";
+@use "item";
+@use "footer";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sacramento", cursive;
+}

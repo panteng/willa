@@ -1,0 +1,37 @@
+.item {
+  width: 100%;
+  padding: 8px;
+  .inner {
+    border-radius: 16px;
+    overflow: hidden;
+    .photo {
+      width: 100%;
+      height: auto;
+      vertical-align: middle; /* remove the space under image */
+      transition: transform 400ms;
+    }
+    &:hover {
+      .photo {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .item {
+    width: 25%;
+  }
+}
