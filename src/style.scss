@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Sacramento", cursive;
 }
@@ -8,7 +12,7 @@ body {
 
 .header {
   width: 100%;
-  height: 60px;
+  height: 70px;
   padding: 10px 0 0 0;
   line-height: 60px;
   background: #000;
@@ -23,29 +27,51 @@ body {
 
 .main {
   max-width: 1024px;
-  width: 90%;
   margin: 70px auto 0 auto;
-  padding: 24px 0;
+  padding: 16px 8px 0 8px;
 }
 
 .gallery {
-  margin: 0 auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.photo {
-  width: 240px;
-  margin-bottom: 16px;
-  border-radius: 16px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: auto;
-    transition: transform 400ms;
-  }
-  &:hover {
-    img {
-      transform: scale(1.1);
+.item {
+  width: 100%;
+  padding: 8px;
+  .inner {
+    border-radius: 16px;
+    overflow: hidden;
+    .photo {
+      width: 100%;
+      height: auto;
+      vertical-align: middle; /* remove the space under image */
+      transition: transform 400ms;
     }
+    &:hover {
+      .photo {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item {
+    width: 25%;
   }
 }
 

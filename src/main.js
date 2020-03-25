@@ -10,17 +10,22 @@ window.onload = () => {
 
   const imagesHTMLStr = images
     .map(imgSrc => {
-      return `<div class="photo"><img src="${imgSrc}" alt="a photo of willa"></div>`;
+      return `
+        <li class="item">
+          <div class="inner">
+            <img class="photo" src="${imgSrc}" alt="a photo of willa">
+          </div>
+        </li>
+      `;
     })
     .join("");
 
   galleryEl.insertAdjacentHTML("beforeend", imagesHTMLStr);
 
   const msnry = new Masonry(galleryEl, {
-    itemSelector: ".photo",
-    columnWidth: ".photo",
-    gutter: 16,
-    fitWidth: true
+    itemSelector: ".item",
+    columnWidth: ".item",
+    initLayout: false
   });
 
   imagesLoaded(galleryEl, () => {
