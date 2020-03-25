@@ -65,7 +65,7 @@ body {
 
 @media (min-width: 768px) {
   .item {
-    width: 33%;
+    width: calc(100% / 3);
   }
 }
 
