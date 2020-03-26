@@ -4,11 +4,16 @@
   .inner {
     border-radius: 16px;
     overflow: hidden;
+    /* fix border-radius + overflow: hidden + CSS transform issue in Safari */
+    transform: translateZ(0);
+    /**/
     .photo {
       width: 100%;
       height: auto;
-      vertical-align: middle; /* remove the space under image */
       transition: transform 400ms;
+      /* remove the space under image */
+      vertical-align: middle;
+      /**/
     }
     &:hover {
       .photo {
